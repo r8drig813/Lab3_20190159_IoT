@@ -1,6 +1,7 @@
 package com.example.lab3_20190159_iot;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +14,11 @@ public class PrimeNumbers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_prime_numbers);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        /*Button buttonFirstSupervisor = findViewById(R.id.buttonFirstSupervisor);
+        Button buttonSecondSupervisor = findViewById(R.id.buttonSecondSupervisor);
+        Button buttonCenter = findViewById(R.id.buttonCenterSupervisor);*/
+
     }
 }
