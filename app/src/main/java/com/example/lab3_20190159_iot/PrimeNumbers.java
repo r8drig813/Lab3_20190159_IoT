@@ -2,6 +2,8 @@ package com.example.lab3_20190159_iot;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -41,11 +43,42 @@ public class PrimeNumbers extends AppCompatActivity {
             binding.showNumber.setText(String.valueOf(contador));
         });
 
+        final boolean[] isPaused = {false};
+
+        boolean isAscending = true;
+        TextView estadoTextView = findViewById(R.id.ascenderodescender);
+
+
+
+        Button pausarButton = findViewById(R.id.pausar);
+        pausarButton.setOnClickListener(v -> {
+            isPaused[0] = !isPaused[0];
+
+            pausarButton.setText(isPaused[0] ? "Reiniciar" : "Pausar");
+
+            estadoTextView.setText(isPaused[0] ? "Está en pausa" : (isAscending ? "Actualmente el contador esta ascendiendo" : "Está descendiendo"));
+
+        });
 
         binding.ascender.setOnClickListener(view -> {
+
+            binding.ascender.setText(isPaused[0] ? "Ascender" : "Descender");
+
+            estadoTextView.setText( "Actualmente el contador esta ascendiendo" );
+
             executorService.execute(() -> {
                 List<Integer> primeNumbers = generatePrimeNumbers(999);
                 for (Integer prime : primeNumbers) {
+                    // Verificar si está pausado
+                    while (isPaused[0]) {
+                        try {
+                            Thread.sleep(100); // Esperar un poco antes de verificar de nuevo
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    // Si no está pausado, mostrar el número primo
                     contadorViewModel.getContador().postValue(prime);
                     Log.d("msg-test", "prime: " + prime);
                     try {
@@ -56,6 +89,7 @@ public class PrimeNumbers extends AppCompatActivity {
                 }
             });
         });
+
 
 
         primesService = new Retrofit.Builder()

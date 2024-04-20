@@ -109,7 +109,24 @@
                         android:minWidth="100dp" />
                 </LinearLayout>
 
+
+
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/ascenderodescender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:maxWidth="300dp"/>
+            </LinearLayout>
+
 
             <View
                 android:layout_width="match_parent"
