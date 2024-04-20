@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="100dp"
-                    android:text="ACA VA EL NÚMERO" />
+                    android:text=""/>
 
             </LinearLayout>
 
@@ -142,15 +142,17 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/moviesSearch"
+                    android:id="@+id/numberSearch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:hint="Order del primo"
+                    android:hint="Orden del primo"
+                    android:text=""
+
                     android:maxWidth="200dp"/>
 
                 <Button
-                    android:id="@+id/searchMovie"
+                    android:id="@+id/searchNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buscar"

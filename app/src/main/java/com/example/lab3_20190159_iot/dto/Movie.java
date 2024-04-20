@@ -233,6 +233,8 @@ public class Movie {
 }
 
 class Rating {
+
+
     private String Source;
     private String Value;
 
@@ -252,3 +254,5 @@ class Rating {
         Value = value;
     }
 }
+
+
