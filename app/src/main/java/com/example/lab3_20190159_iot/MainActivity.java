@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.lab3_20190159_iot.databinding.ActivityMainBinding;
 import com.example.lab3_20190159_iot.databinding.ActivityMoviesBinding;
 import com.example.lab3_20190159_iot.dto.Movie;
 import com.example.lab3_20190159_iot.services.MovieService;
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     MovieService movieService;
-    private ActivityMoviesBinding binding;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         searchMovie.setOnClickListener(v -> {
+            EditText editText = findViewById(R.id.moviesSearch);
+            String imdb = editText.getText().toString();
             Intent intent = new Intent(MainActivity.this, Movies.class);
+            intent.putExtra("imdb", imdb);
             startActivity(intent);
         });
 
 
-
-
     }
+
 
 
 

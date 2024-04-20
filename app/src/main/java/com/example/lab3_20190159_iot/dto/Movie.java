@@ -4,159 +4,32 @@ import java.util.ArrayList;
 
 public class Movie {
 
-    private String title;
-    private String year;
-    private String rated;
-    private String released;
-    private String runtime;
-    private String genre;
-    private String director;
-    private String writer;
-    private String actors;
-    private String plot;
-    private String language;
-    private String country;
-    private String awards;
-    private String poster;
-    private ArrayList<Rating> ratings;
-    private String metascore;
+    private String Title;
+    private String Year;
+    private String Rated;
+    private String Released;
+    private String Runtime;
+    private String Genre;
+    private String Director;
+    private String Writer;
+    private String Actors;
+    private String Plot;
+    private String Language;
+    private String Country;
+    private String Awards;
+    private String Poster;
+    private ArrayList<Rating> Ratings;
+    private String Metascore;
     private String imdbRating;
     private String imdbVotes;
     private String imdbID;
-    private String type;
-    private String dvd;
-    private String boxOffice;
-    private String production;
-    private String website;
-    private String response;
+    private String Type;
+    private String Dvd;
+    private String BoxOffice;
+    private String Production;
+    private String Website;
+    private String Response;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getRated() {
-        return rated;
-    }
-
-    public void setRated(String rated) {
-        this.rated = rated;
-    }
-
-    public String getReleased() {
-        return released;
-    }
-
-    public void setReleased(String released) {
-        this.released = released;
-    }
-
-    public String getRuntime() {
-        return runtime;
-    }
-
-    public void setRuntime(String runtime) {
-        this.runtime = runtime;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public String getActors() {
-        return actors;
-    }
-
-    public void setActors(String actors) {
-        this.actors = actors;
-    }
-
-    public String getPlot() {
-        return plot;
-    }
-
-    public void setPlot(String plot) {
-        this.plot = plot;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getAwards() {
-        return awards;
-    }
-
-    public void setAwards(String awards) {
-        this.awards = awards;
-    }
-
-    public String getPoster() {
-        return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
-    public CharSequence getRatings() {
-        return (CharSequence) ratings;
-    }
-
-    public void setRatings(ArrayList<Rating> ratings) {
-        this.ratings = ratings;
-    }
-
-    public String getMetascore() {
-        return metascore;
-    }
-
-    public void setMetascore(String metascore) {
-        this.metascore = metascore;
-    }
 
     public String getImdbRating() {
         return imdbRating;
@@ -182,73 +55,200 @@ public class Movie {
         this.imdbID = imdbID;
     }
 
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getYear() {
+        return Year;
+    }
+
+    public void setYear(String year) {
+        Year = year;
+    }
+
+    public String getRated() {
+        return Rated;
+    }
+
+    public void setRated(String rated) {
+        Rated = rated;
+    }
+
+    public String getReleased() {
+        return Released;
+    }
+
+    public void setReleased(String released) {
+        Released = released;
+    }
+
+    public String getRuntime() {
+        return Runtime;
+    }
+
+    public void setRuntime(String runtime) {
+        Runtime = runtime;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public void setGenre(String genre) {
+        Genre = genre;
+    }
+
+    public String getDirector() {
+        return Director;
+    }
+
+    public void setDirector(String director) {
+        Director = director;
+    }
+
+    public String getWriter() {
+        return Writer;
+    }
+
+    public void setWriter(String writer) {
+        Writer = writer;
+    }
+
+    public String getActors() {
+        return Actors;
+    }
+
+    public void setActors(String actors) {
+        Actors = actors;
+    }
+
+    public String getPlot() {
+        return Plot;
+    }
+
+    public void setPlot(String plot) {
+        Plot = plot;
+    }
+
+    public String getLanguage() {
+        return Language;
+    }
+
+    public void setLanguage(String language) {
+        Language = language;
+    }
+
+    public String getCountry() {
+        return Country;
+    }
+
+    public void setCountry(String country) {
+        Country = country;
+    }
+
+    public String getAwards() {
+        return Awards;
+    }
+
+    public void setAwards(String awards) {
+        Awards = awards;
+    }
+
+    public String getPoster() {
+        return Poster;
+    }
+
+    public void setPoster(String poster) {
+        Poster = poster;
+    }
+
+    public ArrayList<Rating> getRatings() {
+        return Ratings;
+    }
+
+    public void setRatings(ArrayList<Rating> ratings) {
+        Ratings = ratings;
+    }
+
+    public String getMetascore() {
+        return Metascore;
+    }
+
+    public void setMetascore(String metascore) {
+        Metascore = metascore;
+    }
+
     public String getType() {
-        return type;
+        return Type;
     }
 
     public void setType(String type) {
-        this.type = type;
+        Type = type;
     }
 
     public String getDvd() {
-        return dvd;
+        return Dvd;
     }
 
     public void setDvd(String dvd) {
-        this.dvd = dvd;
+        Dvd = dvd;
     }
 
     public String getBoxOffice() {
-        return boxOffice;
+        return BoxOffice;
     }
 
     public void setBoxOffice(String boxOffice) {
-        this.boxOffice = boxOffice;
+        BoxOffice = boxOffice;
     }
 
     public String getProduction() {
-        return production;
+        return Production;
     }
 
     public void setProduction(String production) {
-        this.production = production;
+        Production = production;
     }
 
     public String getWebsite() {
-        return website;
+        return Website;
     }
 
     public void setWebsite(String website) {
-        this.website = website;
+        Website = website;
     }
 
     public String getResponse() {
-        return response;
+        return Response;
     }
 
     public void setResponse(String response) {
-        this.response = response;
+        Response = response;
     }
 }
 
 class Rating {
-    private String source;
-    private String value;
+    private String Source;
+    private String Value;
 
     public String getSource() {
-        return source;
+        return Source;
     }
 
     public void setSource(String source) {
-        this.source = source;
+        Source = source;
     }
 
     public String getValue() {
-        return value;
+        return Value;
     }
 
     public void setValue(String value) {
-        this.value = value;
+        Value = value;
     }
-
 }

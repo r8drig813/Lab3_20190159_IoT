@@ -105,8 +105,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:hint="idPelicula(IMDb)"
+                    android:text=""
                     android:maxWidth="200dp"/>
-
 
                 <Button
                     android:id="@+id/searchMovie"

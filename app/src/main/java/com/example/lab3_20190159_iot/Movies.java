@@ -1,6 +1,7 @@
 package com.example.lab3_20190159_iot;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import java.util.concurrent.ExecutorService;
 import com.example.lab3_20190159_iot.databinding.ActivityMoviesBinding;
 import com.example.lab3_20190159_iot.dto.Movie;
 
+import okhttp3.HttpUrl;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,7 +44,6 @@ public class Movies extends AppCompatActivity {
         ApplicationThreads application = (ApplicationThreads) getApplication();
         ExecutorService executorService = application.executorService;
 
-
         movieService = new Retrofit.Builder()
                 .baseUrl("https://www.omdbapi.com")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -50,25 +51,26 @@ public class Movies extends AppCompatActivity {
                 .create(MovieService.class);
 
         if(tengoInternet()){
-            movieService.getMovie().enqueue(new Callback<Movie>() {
+            Intent intent = getIntent();
+            String imdb = intent.getStringExtra("imdb");
+
+            movieService.getMovie(imdb).enqueue(new Callback<Movie>() {
                 @Override
                 public void onResponse(Call<Movie> call, Response<Movie> response) {
-                    //aca estoy en el UI Thread
                     if(response.isSuccessful()){
                         Movie movie = response.body();
                         binding.titleMovie.setText(movie.getTitle());
-                        binding.textView1.setText(movie.getYear());
-                        binding.textView2.setText(movie.getRuntime());
-                        binding.textView3.setText(movie.getGenre());
-                        binding.textView4.setText(movie.getDirector());
-                        binding.textView5.setText(movie.getActors());
+                        binding.textView11.setText(movie.getYear());
+                        binding.textView22.setText(movie.getRuntime());
+                        binding.textView33.setText(movie.getGenre());
+                        binding.textView44.setText(movie.getDirector());
+                        binding.textView55.setText(movie.getActors());
                         binding.plotMovie.setText(movie.getPlot());
-                        binding.rating.setText(movie.getRatings());
 
 
 
 
-                        Log.d("msg-test-ws-profile","name: " + movie.getTitle());
+                        Log.d("msg-test-ws-profile","name: " + movie.getImdbID());
 
                     }
                 }
