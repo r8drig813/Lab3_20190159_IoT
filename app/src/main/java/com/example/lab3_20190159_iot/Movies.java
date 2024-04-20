@@ -30,13 +30,14 @@ public class Movies extends AppCompatActivity {
 
     MovieService movieService;
 
-    //private ActivityMoviesBinding binding;
+    ActivityMoviesBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
-        //binding = ActivityMoviesBinding.inflate(getLayoutInflater());
-        //setContentView(binding.getRoot());
+
+        binding = ActivityMoviesBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         ApplicationThreads application = (ApplicationThreads) getApplication();
         ExecutorService executorService = application.executorService;
@@ -48,31 +49,40 @@ public class Movies extends AppCompatActivity {
                 .build()
                 .create(MovieService.class);
 
+        if(tengoInternet()){
+            movieService.getMovie().enqueue(new Callback<Movie>() {
+                @Override
+                public void onResponse(Call<Movie> call, Response<Movie> response) {
+                    //aca estoy en el UI Thread
+                    if(response.isSuccessful()){
+                        Movie movie = response.body();
+                        binding.titleMovie.setText(movie.getTitle());
+                        binding.textView1.setText(movie.getYear());
+                        binding.textView2.setText(movie.getRuntime());
+                        binding.textView3.setText(movie.getGenre());
+                        binding.textView4.setText(movie.getDirector());
+                        binding.textView5.setText(movie.getActors());
+                        binding.plotMovie.setText(movie.getPlot());
+                        binding.rating.setText(movie.getRatings());
 
-        movieService.getMovie().enqueue(new Callback<Movie>() {
-            @Override
-            public void onResponse(Call<Movie> call, Response<Movie> response) {
-                TextView titleMovieTextView = findViewById(R.id.titleMovie);
-                if(response.isSuccessful()){
-                    Movie movie = response.body();
-                    titleMovieTextView.setText(movie.getTitle());
-                    Log.d("msg-test-ws-profile","title: " + movie.getTitle());
 
 
 
+                        Log.d("msg-test-ws-profile","name: " + movie.getTitle());
 
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<Movie> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+                @Override
+                public void onFailure(Call<Movie> call, Throwable t) {
+                    t.printStackTrace();
+                }
+            });
+        }
+
 
 
     }
-
 
 
 

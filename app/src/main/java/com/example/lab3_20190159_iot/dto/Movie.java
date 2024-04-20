@@ -142,8 +142,8 @@ public class Movie {
         this.poster = poster;
     }
 
-    public ArrayList<Rating> getRatings() {
-        return ratings;
+    public CharSequence getRatings() {
+        return (CharSequence) ratings;
     }
 
     public void setRatings(ArrayList<Rating> ratings) {
