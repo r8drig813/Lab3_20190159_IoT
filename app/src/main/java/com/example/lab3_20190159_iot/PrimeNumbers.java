@@ -42,7 +42,7 @@ public class PrimeNumbers extends AppCompatActivity {
 
         ApplicationThreads application = (ApplicationThreads) getApplication();
         ExecutorService executorService = application.executorService;
-
+        //Intente usar hilos pero no me salio.
         ContadorViewModel contadorViewModel =
                 new ViewModelProvider(PrimeNumbers.this).get(ContadorViewModel.class);
 
