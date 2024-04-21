@@ -18,7 +18,7 @@ public class Movie {
     private String Country;
     private String Awards;
     private String Poster;
-    private ArrayList<Rating> Ratings;
+    private ArrayList<Ratings> Ratings;
     private String Metascore;
     private String imdbRating;
     private String imdbVotes;
@@ -167,11 +167,11 @@ public class Movie {
         Poster = poster;
     }
 
-    public ArrayList<Rating> getRatings() {
+    public ArrayList<Ratings> getRatings() {
         return Ratings;
     }
 
-    public void setRatings(ArrayList<Rating> ratings) {
+    public void setRatings(ArrayList<Ratings> ratings) {
         Ratings = ratings;
     }
 
@@ -229,29 +229,6 @@ public class Movie {
 
     public void setResponse(String response) {
         Response = response;
-    }
-}
-
-class Rating {
-
-
-    private String Source;
-    private String Value;
-
-    public String getSource() {
-        return Source;
-    }
-
-    public void setSource(String source) {
-        Source = source;
-    }
-
-    public String getValue() {
-        return Value;
-    }
-
-    public void setValue(String value) {
-        Value = value;
     }
 }
 

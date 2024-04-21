@@ -3,6 +3,7 @@
 
     import com.example.lab3_20190159_iot.dto.Movie;
     import com.example.lab3_20190159_iot.dto.Number;
+    import com.example.lab3_20190159_iot.dto.Ratings;
 
     import java.util.List;
 
@@ -13,6 +14,9 @@
 
         @GET("/?apikey=bf81d461")
         Call<Movie> getMovie(@Query("i") String imdb);
+
+        @GET("/?apikey=bf81d461")
+        Call<List<Ratings>> getMovieRatings(@Query("i") String ratings);
 
 
 
